@@ -132,11 +132,8 @@
     <!-- MAIN CONTENT CONTAINER -->
     <main class="flex-1 max-w-7xl w-full mx-auto p-3 md:p-6 flex flex-col justify-center">
 
-        <!-- ========================================== -->
-        <!-- VIEW 1: HOST / LAYAR UTAMA (PROYEKTOR)    -->
-        <!-- ========================================== -->
+        <!-- VIEW 1: HOST / LAYAR UTAMA -->
         <section id="view-host" class="view-panel space-y-6">
-            <!-- SETUP ARENA CARD (LOBBY) -->
             <div id="host-lobby-panel" class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 glow-box max-w-3xl mx-auto">
                 <div class="text-center mb-6">
                     <span class="bg-purple-900/60 text-purple-300 border border-purple-700/50 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Game Control Center</span>
@@ -185,9 +182,8 @@
                 </div>
             </div>
 
-            <!-- LIVE MATCH DISPLAY (PROJECTION SCREEN) -->
+            <!-- LIVE MATCH DISPLAY -->
             <div id="host-arena-panel" class="hidden space-y-6">
-                <!-- TOP STATUS & CONTROLS -->
                 <div class="bg-slate-900/90 border border-slate-800 p-4 rounded-2xl flex flex-wrap items-center justify-between gap-4 shadow-xl">
                     <div class="flex flex-wrap items-center gap-3">
                         <span id="host-babak-badge" class="px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider bg-purple-900/80 text-purple-300 border border-purple-600">
@@ -201,7 +197,6 @@
                         </span>
                     </div>
 
-                    <!-- BIG TIMER COUNTDOWN -->
                     <div class="flex items-center gap-3">
                         <div class="text-right hidden sm:block">
                             <div class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Sisa Waktu</div>
@@ -228,7 +223,6 @@
                     </div>
                 </div>
 
-                <!-- QUESTION DISPLAY AREA -->
                 <div id="question-card-container" class="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 md:p-8 relative overflow-hidden glow-box transition-all">
                     <div class="absolute top-0 right-0 p-4 opacity-10 text-slate-500 font-black text-8xl pointer-events-none select-none">
                         <i class="fa-solid fa-square-root-variable"></i>
@@ -247,12 +241,10 @@
                         Sederhanakan bentuk aljabar berikut: 3x + 5y + 2x - 3y = ...
                     </div>
 
-                    <!-- OPTIONS GRID -->
                     <div id="host-options-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                         <!-- Rendered dynamically -->
                     </div>
 
-                    <!-- ALERT FOR WRONG ANSWER / TIMEOUT -->
                     <div id="host-wrong-alert" class="hidden mt-6 p-4 rounded-xl bg-gradient-to-r from-rose-900/80 to-amber-900/80 border-2 border-rose-500 animate-shake flex flex-col md:flex-row items-center justify-between gap-4">
                         <div class="flex items-center gap-3">
                             <div class="bg-rose-600 text-white p-3 rounded-xl font-black text-2xl animate-pulse">
@@ -268,7 +260,6 @@
                         </button>
                     </div>
 
-                    <!-- BUZZER ALERT NOTIFIER -->
                     <div id="host-buzzer-alert" class="hidden mt-6 p-4 rounded-xl bg-gradient-to-r from-amber-500/20 to-rose-500/20 border-2 border-amber-500 animate-pulse flex flex-col sm:flex-row items-center justify-between gap-4">
                         <div class="flex items-center gap-3">
                             <div class="bg-amber-500 text-slate-950 p-3 rounded-xl font-black text-xl">
@@ -290,7 +281,6 @@
                     </div>
                 </div>
 
-                <!-- MAIN SCOREBOARD GRID -->
                 <div>
                     <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-2">
                         <i class="fa-solid fa-trophy text-amber-400"></i> Papan Skor Utama Real-Time
@@ -301,7 +291,7 @@
                 </div>
             </div>
 
-            <!-- POST-GAME LEADERBOARD MODAL -->
+            <!-- LEADERBOARD MODAL -->
             <div id="host-leaderboard-modal" class="hidden fixed inset-0 bg-slate-950/90 backdrop-blur-md z-50 flex items-center justify-center p-4">
                 <div class="bg-slate-900 border border-slate-700 rounded-3xl p-6 md:p-8 max-w-2xl w-full text-center glow-box space-y-6 relative overflow-hidden">
                     <div class="inline-block bg-gradient-to-tr from-amber-400 to-yellow-200 text-slate-950 p-4 rounded-full shadow-2xl animate-bounce">
@@ -316,7 +306,6 @@
                         <!-- Dynamic Winner Info -->
                     </div>
 
-                    <!-- RANKINGS LIST -->
                     <div id="final-rankings-list" class="space-y-2 max-h-60 overflow-y-auto custom-scrollbar text-left">
                         <!-- Dynamic rankings -->
                     </div>
@@ -333,13 +322,9 @@
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- VIEW 2: PESERTA CONTROLLER (MOBILE DEVICE) -->
-        <!-- ========================================== -->
+        <!-- VIEW 2: PESERTA CONTROLLER -->
         <section id="view-student" class="view-panel hidden max-w-md mx-auto w-full">
             <div class="bg-slate-900 border border-slate-800 rounded-3xl p-5 shadow-2xl relative overflow-hidden space-y-5">
-                
-                <!-- MOBILE HEADER -->
                 <div class="flex items-center justify-between border-b border-slate-800 pb-3">
                     <div class="flex items-center gap-2">
                         <div class="w-8 h-8 rounded-lg bg-purple-600 flex items-center justify-center text-white text-xs font-black">
@@ -350,7 +335,6 @@
                             <p class="text-[10px] text-slate-400">Pilih tim & jawab soal</p>
                         </div>
                     </div>
-                    <!-- SELECT TEAM DROPDOWN -->
                     <select id="student-team-select" onchange="changeStudentTeam(this.value)" class="bg-slate-800 border border-slate-700 text-cyan-300 text-xs font-bold rounded-xl px-2.5 py-1.5 outline-none">
                         <option value="1">Tim 1</option>
                         <option value="2">Tim 2</option>
@@ -361,7 +345,6 @@
                     </select>
                 </div>
 
-                <!-- PRIVACY RULE SCORE CARD (ONLY OWNS SCORE SHOWN) -->
                 <div class="bg-gradient-to-r from-purple-900/60 to-indigo-900/60 border border-purple-700/50 p-4 rounded-2xl flex items-center justify-between">
                     <div>
                         <span class="text-[10px] font-bold uppercase tracking-wider text-purple-300">Skor Tim Kamu</span>
@@ -373,7 +356,6 @@
                     </div>
                 </div>
 
-                <!-- ACTIVE QUESTION PREVIEW FOR STUDENT -->
                 <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
                     <div class="flex justify-between items-center text-[11px] font-bold text-slate-400">
                         <span id="student-babak-label" class="text-purple-400">Babak 1: Soal Wajib</span>
@@ -384,9 +366,7 @@
                     </div>
                 </div>
 
-                <!-- STUDENT ACTION INTERFACE -->
                 <div id="student-action-area" class="space-y-3">
-                    <!-- BUZZER BUTTON (FOR REBUTAN / STEAL MODE) -->
                     <div id="student-buzzer-container" class="hidden text-center py-4">
                         <button id="student-buzzer-btn" onclick="pressBuzzer()" class="buzzer-btn w-48 h-48 rounded-full border-4 border-rose-300 font-display font-black text-2xl text-white tracking-widest uppercase flex flex-col items-center justify-center mx-auto active:scale-95 transition-transform">
                             <i class="fa-solid fa-hand-pointer text-4xl mb-1"></i>
@@ -395,22 +375,18 @@
                         <p class="text-xs text-slate-400 mt-3">Tekan secepat mungkin saat tahu jawabannya!</p>
                     </div>
 
-                    <!-- MULTIPLE CHOICE OPTIONS FOR STUDENT -->
                     <div id="student-options-container" class="grid grid-cols-1 gap-2.5">
                         <!-- Options injected dynamically -->
                     </div>
                 </div>
 
-                <!-- STATUS MESSAGE -->
                 <div id="student-status-msg" class="text-center text-xs text-slate-400 bg-slate-800/40 py-2 rounded-xl border border-slate-800">
                     <i class="fa-solid fa-wifi text-emerald-400 mr-1"></i> Terhubung ke Arena
                 </div>
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- VIEW 3: CMS MASTER SOAL & LOG HISTORY     -->
-        <!-- ========================================== -->
+        <!-- VIEW 3: CMS MASTER SOAL & LOG -->
         <section id="view-cms" class="view-panel hidden space-y-6">
             <div class="flex flex-wrap items-center justify-between gap-4 bg-slate-900 p-4 rounded-2xl border border-slate-800">
                 <div>
@@ -430,7 +406,6 @@
                 </div>
             </div>
 
-            <!-- QUESTION EDITOR FORM -->
             <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl space-y-4">
                 <h3 class="text-sm font-bold uppercase text-purple-400 tracking-wider">Tambah / Edit Soal Baru</h3>
                 <form id="cms-question-form" onsubmit="saveQuestionFromCMS(event)" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
@@ -502,7 +477,6 @@
                 </form>
             </div>
 
-            <!-- QUESTION BANK TABLE -->
             <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-3">
                 <h3 class="text-sm font-bold uppercase text-slate-300">Daftar Bank Soal Tersimpan</h3>
                 <div class="overflow-x-auto">
@@ -523,7 +497,6 @@
                 </div>
             </div>
 
-            <!-- GAME HISTORY LOGS -->
             <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-3">
                 <div class="flex justify-between items-center">
                     <h3 class="text-sm font-bold uppercase text-slate-300">Riwayat Match Terakhir (Game Logs)</h3>
@@ -537,47 +510,40 @@
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- VIEW 4: FIREBASE & SYSTEM CONFIG           -->
-        <!-- ========================================== -->
+        <!-- VIEW 4: FIREBASE & SYSTEM CONFIG -->
         <section id="view-docs" class="view-panel hidden space-y-6">
             <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-6">
                 <div>
                     <span class="text-xs font-bold uppercase text-cyan-400 tracking-wider">Cloud Realtime Integration</span>
                     <h2 class="text-2xl font-extrabold text-white mt-1">Konfigurasi Firebase Database</h2>
-                    <p class="text-xs text-slate-400 mt-1">Isi kredensial Firebase Anda di bawah ini untuk mengaktifkan sinkronisasi antar HP & Proyektor secara Online via Internet.</p>
+                    <p class="text-xs text-slate-400 mt-1">Konfigurasi Firebase telah diatur secara permanen dan terhubung otomatis saat permainan dimulai.</p>
                 </div>
 
-                <!-- FIREBASE CONFIG FORM -->
                 <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 space-y-4">
                     <h3 class="text-sm font-bold text-purple-300 flex items-center gap-2">
-                        <i class="fa-solid fa-fire text-amber-500"></i> Setup Firebase Realtime Database
+                        <i class="fa-solid fa-fire text-amber-500"></i> Status Firebase Realtime Database
                     </h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
                         <div>
                             <label class="block text-slate-400 mb-1">API Key</label>
-                            <input type="text" id="fb-api-key" placeholder="AIzaSy..." class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-white font-mono">
+                            <input type="text" id="fb-api-key" readonly class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-white font-mono">
                         </div>
                         <div>
                             <label class="block text-slate-400 mb-1">Auth Domain</label>
-                            <input type="text" id="fb-auth-domain" placeholder="project.firebaseapp.com" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-white font-mono">
+                            <input type="text" id="fb-auth-domain" readonly class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-white font-mono">
                         </div>
                         <div>
                             <label class="block text-slate-400 mb-1">Database URL</label>
-                            <input type="text" id="fb-db-url" placeholder="https://project-default-rtdb.firebaseio.com" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-white font-mono">
+                            <input type="text" id="fb-db-url" readonly class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-white font-mono">
                         </div>
                         <div>
                             <label class="block text-slate-400 mb-1">Project ID</label>
-                            <input type="text" id="fb-project-id" placeholder="project-id" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-white font-mono">
+                            <input type="text" id="fb-project-id" readonly class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-white font-mono">
                         </div>
                     </div>
-                    <button onclick="initFirebaseConnection()" class="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-slate-950 font-bold px-5 py-2.5 rounded-xl transition text-xs flex items-center gap-2">
-                        <i class="fa-solid fa-plug"></i> Hubungkan Firebase Online
-                    </button>
-                    <div id="fb-status-msg" class="text-xs text-slate-400 italic">Status: Menjalankan Local BroadcastChannel / Offline Sync Mode</div>
+                    <div id="fb-status-msg" class="text-xs text-emerald-400 font-bold">Status: Terhubung Otomatis ke Firebase Realtime Database Online!</div>
                 </div>
 
-                <!-- SYSTEM ARCHITECTURE FLOW -->
                 <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
                     <h3 class="text-sm font-bold text-purple-300 flex items-center gap-2">
                         <i class="fa-solid fa-diagram-project"></i> Skema Alur Pertandingan
@@ -603,11 +569,21 @@
         </div>
     </footer>
 
-    <!-- ========================================== -->
-    <!-- JAVASCRIPT LOGIC & ENGINE CODE            -->
-    <!-- ========================================== -->
+    <!-- JAVASCRIPT LOGIC & ENGINE CODE -->
     <script>
-        // WEB AUDIO SYNTHESIZER (SOUND EFFECTS GENERATOR)
+        // PERMANENT FIREBASE CONFIGURATION
+        const firebaseConfig = {
+            apiKey: "AIzaSyDkCGiqzlhMXQh5Hm7bQkGjnLgzx91gGdI",
+            authDomain: "aljabar-c4e2b.firebaseapp.com",
+            databaseURL: "https://aljabar-c4e2b-default-rtdb.firebaseio.com",
+            projectId: "aljabar-c4e2b",
+            storageBucket: "aljabar-c4e2b.firebasestorage.app",
+            messagingSenderId: "17460190345",
+            appId: "1:17460190345:web:dded46aa9fd4b646dd7a58",
+            measurementId: "G-B2FHSS9JD1"
+        };
+
+        // WEB AUDIO SYNTHESIZER
         const AudioFX = {
             ctx: null,
             init() {
@@ -620,7 +596,7 @@
                 const osc = this.ctx.createOscillator();
                 const gain = this.ctx.createGain();
                 osc.type = 'sawtooth';
-                osc.frequency.setValueAtTime(880, this.ctx.currentTime); // A5
+                osc.frequency.setValueAtTime(880, this.ctx.currentTime);
                 osc.frequency.exponentialRampToValueAtTime(440, this.ctx.currentTime + 0.3);
                 gain.gain.setValueAtTime(0.3, this.ctx.currentTime);
                 gain.gain.exponentialRampToValueAtTime(0.01, this.ctx.currentTime + 0.3);
@@ -635,10 +611,10 @@
                 const osc = this.ctx.createOscillator();
                 const gain = this.ctx.createGain();
                 osc.type = 'sine';
-                osc.frequency.setValueAtTime(523.25, now); // C5
-                osc.frequency.setValueAtTime(659.25, now + 0.1); // E5
-                osc.frequency.setValueAtTime(783.99, now + 0.2); // G5
-                osc.frequency.setValueAtTime(1046.50, now + 0.3); // C6
+                osc.frequency.setValueAtTime(523.25, now);
+                osc.frequency.setValueAtTime(659.25, now + 0.1);
+                osc.frequency.setValueAtTime(783.99, now + 0.2);
+                osc.frequency.setValueAtTime(1046.50, now + 0.3);
                 gain.gain.setValueAtTime(0.2, now);
                 gain.gain.exponentialRampToValueAtTime(0.01, now + 0.5);
                 osc.connect(gain);
@@ -693,9 +669,7 @@
             }
         };
 
-        // DEFAULT QUESTION BANK
         const DEFAULT_QUESTIONS = [
-            // BABAK WAJIB
             { id: "W-01", round: "wajib", category: "Penjumlahan Aljabar", question: "Sederhanakan: (4x + 3y) + (2x + 5y) = ...", options: ["8x + 6y", "6x + 2y", "6x + 8y", "2x + 8y"], correctIndex: 2, timeLimit: 30 },
             { id: "W-02", round: "wajib", category: "Pengurangan Aljabar", question: "Hasil dari: (7a - 4b) - (3a + 2b) adalah...", options: ["4a - 6b", "4a - 2b", "10a - 6b", "4a + 2b"], correctIndex: 0, timeLimit: 30 },
             { id: "W-03", round: "wajib", category: "Perkalian Aljabar", question: "Hasil dari perkalian suku: 3x × 4xy = ...", options: ["12x²y", "12xy²", "7x²y", "12xy"], correctIndex: 0, timeLimit: 30 },
@@ -708,14 +682,12 @@
             { id: "W-09", round: "wajib", category: "Substitusi Aljabar", question: "Jika x = 3 dan y = 2, nilai dari 3x + 2y adalah...", options: ["13", "12", "15", "10"], correctIndex: 0, timeLimit: 30 },
             { id: "W-10", round: "wajib", category: "Penjumlahan Aljabar", question: "Jumlah dari (2x² + 3x) dan (x² - 5x) adalah...", options: ["3x² - 2x", "3x² + 8x", "x² - 2x", "3x² - 8x"], correctIndex: 0, timeLimit: 30 },
 
-            // BABAK REBUTAN
             { id: "R-01", round: "rebutan", category: "Perkalian Aljabar", question: "Jabarkan perkalian: (x + 3)(x + 2) = ...", options: ["x² + 5x + 6", "x² + 6x + 5", "x² + 5x + 5", "x² + 6"], correctIndex: 0, timeLimit: 15 },
             { id: "R-02", round: "rebutan", category: "Pengurangan Aljabar", question: "Sederhanakan bentuk: (9p - 3) - (4p - 8) = ...", options: ["5p - 5", "5p - 11", "13p - 11", "5p + 5"], correctIndex: 3, timeLimit: 15 },
             { id: "R-03", round: "rebutan", category: "Pembagian Aljabar", question: "Hasil pembagian dari (12x² + 6x) ÷ 3x adalah...", options: ["4x + 2", "4x + 2x", "4 + 2x", "2x + 4"], correctIndex: 0, timeLimit: 15 },
             { id: "R-04", round: "rebutan", category: "Substitusi Aljabar", question: "Jika a = 3 dan b = 2, berapakah nilai dari 2a + 4b - 3? ...", options: ["9", "10", "11", "14"], correctIndex: 2, timeLimit: 15 },
             { id: "R-05", round: "rebutan", category: "Perkalian Aljabar", question: "Jabarkan bentuk kuadrat aljabar: (2x - 3)² = ...", options: ["4x² - 12x + 9", "4x² - 9", "4x² - 6x + 9", "2x² - 12x + 9"], correctIndex: 0, timeLimit: 15 },
 
-            // 20 SOAL CADANGAN
             { id: "C-01", round: "cadangan", category: "Substitusi Aljabar", question: "[CADANGAN 1] Jika a = 4 dan b = 3, hitung nilai 2a² - 3b!", options: ["23", "20", "25", "18"], correctIndex: 0, timeLimit: 30 },
             { id: "C-02", round: "cadangan", category: "Faktorisasi Aljabar", question: "[CADANGAN 2] Faktorkan bentuk aljabar: x² - 16 = ...", options: ["(x - 4)(x + 4)", "(x - 8)(x + 2)", "(x - 4)²", "(x + 4)²"], correctIndex: 0, timeLimit: 30 },
             { id: "C-03", round: "cadangan", category: "Penjumlahan Aljabar", question: "[CADANGAN 3] Sederhanakan: 3(2x + 4) + 2(x - 3) = ...", options: ["8x + 6", "8x + 18", "6x + 6", "8x - 6"], correctIndex: 0, timeLimit: 30 },
@@ -728,7 +700,6 @@
             { id: "C-10", round: "cadangan", category: "Pengurangan Aljabar", question: "[CADANGAN 10] Hasil dari (10x - 5y) - (3x - 8y) = ...", options: ["7x + 3y", "7x - 13y", "13x + 3y", "7x - 3y"], correctIndex: 0, timeLimit: 30 }
         ];
 
-        // GLOBAL GAME STATE
         let gameState = {
             roomCode: "ALJ-2026",
             activeRound: "wajib", 
@@ -750,13 +721,31 @@
         const eventBus = new BroadcastChannel('aljabar_arena_bus');
         let firebaseDB = null;
 
-        // INITIALIZATION
+        // AUTO-INITIALIZE FIREBASE ON PAGE LOAD
         window.addEventListener('DOMContentLoaded', () => {
             loadFromLocalStorage();
             initQRCode();
             renderScoreboardHost();
             renderCMSTable();
             renderHistoryLogs();
+
+            // Auto connect to Firebase using the predefined firebaseConfig
+            try {
+                if (!firebase.apps.length) {
+                    firebase.initializeApp(firebaseConfig);
+                }
+                firebaseDB = firebase.database();
+                
+                // Populate configuration view fields automatically
+                if (document.getElementById('fb-api-key')) {
+                    document.getElementById('fb-api-key').value = firebaseConfig.apiKey;
+                    document.getElementById('fb-auth-domain').value = firebaseConfig.authDomain;
+                    document.getElementById('fb-db-url').value = firebaseConfig.databaseURL;
+                    document.getElementById('fb-project-id').value = firebaseConfig.projectId;
+                }
+            } catch (err) {
+                console.error("Firebase Auto-Init Error:", err);
+            }
 
             eventBus.onmessage = (event) => {
                 handleBroadcastEvent(event.data);
@@ -1337,31 +1326,6 @@
             a.href = dataStr;
             a.download = "Game_History_Log.json";
             a.click();
-        }
-
-        function initFirebaseConnection() {
-            const apiKey = document.getElementById('fb-api-key').value;
-            const authDomain = document.getElementById('fb-auth-domain').value;
-            const databaseURL = document.getElementById('fb-db-url').value;
-            const projectId = document.getElementById('fb-project-id').value;
-
-            if (!apiKey || !databaseURL) {
-                alert("Harap isi API Key dan Database URL!");
-                return;
-            }
-
-            try {
-                const config = { apiKey, authDomain, databaseURL, projectId };
-                if (!firebase.apps.length) {
-                    firebase.initializeApp(config);
-                }
-                firebaseDB = firebase.database();
-                document.getElementById('fb-status-msg').innerText = "Status: Terhubung ke Firebase Realtime Database Online!";
-                document.getElementById('fb-status-msg').className = "text-xs text-emerald-400 font-bold";
-                showNotification("Firebase Online Terhubung!");
-            } catch (err) {
-                alert("Gagal menghubungkan Firebase: " + err.message);
-            }
         }
 
         function saveToLocalStorage() {
