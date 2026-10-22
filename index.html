@@ -121,10 +121,6 @@
                     <i class="fa-solid fa-sliders"></i>
                     <span>Master Soal & Log</span>
                 </button>
-                <button onclick="switchView('docs')" id="tab-docs" class="nav-tab px-3 py-1.5 rounded-lg text-xs md:text-sm font-semibold text-slate-400 hover:text-white flex items-center gap-1.5 transition-all">
-                    <i class="fa-solid fa-book"></i>
-                    <span>Firebase & Sistem</span>
-                </button>
             </div>
         </div>
     </header>
@@ -509,52 +505,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- VIEW 4: FIREBASE & SYSTEM CONFIG -->
-        <section id="view-docs" class="view-panel hidden space-y-6">
-            <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-6">
-                <div>
-                    <span class="text-xs font-bold uppercase text-cyan-400 tracking-wider">Cloud Realtime Integration</span>
-                    <h2 class="text-2xl font-extrabold text-white mt-1">Konfigurasi Firebase Database</h2>
-                    <p class="text-xs text-slate-400 mt-1">Konfigurasi Firebase telah diatur secara permanen dan terhubung otomatis saat permainan dimulai.</p>
-                </div>
-
-                <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 space-y-4">
-                    <h3 class="text-sm font-bold text-purple-300 flex items-center gap-2">
-                        <i class="fa-solid fa-fire text-amber-500"></i> Status Firebase Realtime Database
-                    </h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
-                        <div>
-                            <label class="block text-slate-400 mb-1">API Key</label>
-                            <input type="text" id="fb-api-key" readonly class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-white font-mono">
-                        </div>
-                        <div>
-                            <label class="block text-slate-400 mb-1">Auth Domain</label>
-                            <input type="text" id="fb-auth-domain" readonly class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-white font-mono">
-                        </div>
-                        <div>
-                            <label class="block text-slate-400 mb-1">Database URL</label>
-                            <input type="text" id="fb-db-url" readonly class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-white font-mono">
-                        </div>
-                        <div>
-                            <label class="block text-slate-400 mb-1">Project ID</label>
-                            <input type="text" id="fb-project-id" readonly class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-white font-mono">
-                        </div>
-                    </div>
-                    <div id="fb-status-msg" class="text-xs text-emerald-400 font-bold">Status: Terhubung Otomatis ke Firebase Realtime Database Online!</div>
-                </div>
-
-                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
-                    <h3 class="text-sm font-bold text-purple-300 flex items-center gap-2">
-                        <i class="fa-solid fa-diagram-project"></i> Skema Alur Pertandingan
-                    </h3>
-                    <p class="text-xs text-slate-300 leading-relaxed">
-                        1. **Babak Wajib**: Tim 1 mengerjakan 5 soal secara berurutan. Jika salah/habis waktu, pemicu visual & audio menyala, lalu masuk mode **Buzzer Steal** bagi tim lain. Setelah Tim 1 selesai 5 soal, lanjut ke Tim 2, dst.<br>
-                        2. **Babak Rebutan**: Berjalan otomatis setelah seluruh tim menyelesaikan soal wajibnya dengan membawa akumulasi skor sebelumnya.
-                    </p>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- FOOTER & WATERMARK -->
@@ -564,14 +514,14 @@
                 ALJABAR ARENA &copy; 2026 - Interactive Game Engine
             </div>
             <div class="font-extrabold text-xs tracking-wider text-purple-400 bg-purple-950/60 border border-purple-800/80 px-3 py-1 rounded-full shadow">
-                Design By. Ms. Evi
+                Created by Ms. Evi
             </div>
         </div>
     </footer>
 
     <!-- JAVASCRIPT LOGIC & ENGINE CODE -->
     <script>
-        // PERMANENT FIREBASE CONFIGURATION
+        // AUTOMATIC FIREBASE CONFIGURATION (HIDDEN BACKGROUND INIT)
         const firebaseConfig = {
             apiKey: "AIzaSyDkCGiqzlhMXQh5Hm7bQkGjnLgzx91gGdI",
             authDomain: "aljabar-c4e2b.firebaseapp.com",
@@ -721,7 +671,7 @@
         const eventBus = new BroadcastChannel('aljabar_arena_bus');
         let firebaseDB = null;
 
-        // AUTO-INITIALIZE FIREBASE ON PAGE LOAD
+        // AUTO INITIALIZE ON PAGE LOAD
         window.addEventListener('DOMContentLoaded', () => {
             loadFromLocalStorage();
             initQRCode();
@@ -729,22 +679,14 @@
             renderCMSTable();
             renderHistoryLogs();
 
-            // Auto connect to Firebase using the predefined firebaseConfig
+            // Automatic background initialization of Firebase Realtime Database
             try {
                 if (!firebase.apps.length) {
                     firebase.initializeApp(firebaseConfig);
                 }
                 firebaseDB = firebase.database();
-                
-                // Populate configuration view fields automatically
-                if (document.getElementById('fb-api-key')) {
-                    document.getElementById('fb-api-key').value = firebaseConfig.apiKey;
-                    document.getElementById('fb-auth-domain').value = firebaseConfig.authDomain;
-                    document.getElementById('fb-db-url').value = firebaseConfig.databaseURL;
-                    document.getElementById('fb-project-id').value = firebaseConfig.projectId;
-                }
             } catch (err) {
-                console.error("Firebase Auto-Init Error:", err);
+                console.error("Firebase Initialization Error:", err);
             }
 
             eventBus.onmessage = (event) => {
