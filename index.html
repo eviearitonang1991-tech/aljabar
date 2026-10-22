@@ -446,7 +446,7 @@
                             <option value="Pengurangan Aljabar">Pengurangan Aljabar</option>
                             <option value="Perkalian Aljabar">Perkalian Aljabar</option>
                             <option value="Pembagian Aljabar">Pembagian Aljabar</option>
-                            <option value="Faktorisasi Aljabar">Faktorisasi Aljabar</option>
+                            <option value="Penyederhanaan Aljabar">Penyederhanaan Aljabar</option>
                             <option value="Substitusi Aljabar">Substitusi Aljabar</option>
                         </select>
                     </div>
@@ -696,23 +696,23 @@
         // DEFAULT QUESTION BANK
         const DEFAULT_QUESTIONS = [
             // BABAK WAJIB
-            { id: "W-01", round: "wajib", category: "Penjumlahan Aljabar", question: "Sederhanakan: (4x + 3y) + (2x + 5y) = ...", options: ["6x + 8y", "6x + 2y", "8x + 6y", "2x + 8y"], correctIndex: 0, timeLimit: 30 },
+            { id: "W-01", round: "wajib", category: "Penjumlahan Aljabar", question: "Sederhanakan: (4x + 3y) + (2x + 5y) = ...", options: ["8x + 6y", "6x + 2y", "6x + 8y", "2x + 8y"], correctIndex: 2, timeLimit: 30 },
             { id: "W-02", round: "wajib", category: "Pengurangan Aljabar", question: "Hasil dari: (7a - 4b) - (3a + 2b) adalah...", options: ["4a - 6b", "4a - 2b", "10a - 6b", "4a + 2b"], correctIndex: 0, timeLimit: 30 },
             { id: "W-03", round: "wajib", category: "Perkalian Aljabar", question: "Hasil dari perkalian suku: 3x × 4xy = ...", options: ["12x²y", "12xy²", "7x²y", "12xy"], correctIndex: 0, timeLimit: 30 },
-            { id: "W-04", round: "wajib", category: "Pembagian Aljabar", question: "Sederhanakan pembagian: 15a²b ÷ 3a = ...", options: ["5ab", "5a²b", "5b", "12ab"], correctIndex: 0, timeLimit: 30 },
-            { id: "W-05", round: "wajib", category: "Penjumlahan Aljabar", question: "Bentuk sederhana dari 5m + 2n - 3m + 4n adalah...", options: ["2m + 6n", "8m + 6n", "2m - 2n", "6m + 2n"], correctIndex: 0, timeLimit: 30 },
+            { id: "W-04", round: "wajib", category: "Pembagian Aljabar", question: "Sederhanakan pembagian: 15a²b ÷ 3a = ...", options: ["5b", "5a²b", "5ab", "12ab"], correctIndex: 2, timeLimit: 30 },
+            { id: "W-05", round: "wajib", category: "Penjumlahan Aljabar", question: "Bentuk sederhana dari 5m + 2n - 3m + 4n adalah...", options: ["6m + 2n", "8m + 6n", "2m - 2n", "2m + 6n"], correctIndex: 3, timeLimit: 30 },
             
-            { id: "W-06", round: "wajib", category: "Pengurangan Aljabar", question: "Sederhanakan: (8p - 3q) - (2p - 5q) = ...", options: ["6p + 2q", "6p - 8q", "10p + 2q", "6p - 2q"], correctIndex: 0, timeLimit: 30 },
+            { id: "W-06", round: "wajib", category: "Pengurangan Aljabar", question: "Sederhanakan: (8p - 3q) - (2p - 5q) = ...", options: ["6p - 2q", "6p - 8q", "10p + 2q", "6p + 2q"], correctIndex: 3, timeLimit: 30 },
             { id: "W-07", round: "wajib", category: "Perkalian Aljabar", question: "Hasil dari 2a(3a + 4b) adalah...", options: ["6a² + 8ab", "6a + 8ab", "5a² + 8ab", "6a² + 6ab"], correctIndex: 0, timeLimit: 30 },
-            { id: "W-08", round: "wajib", category: "Pembagian Aljabar", question: "Sederhanakan: 24x³y² ÷ 6xy = ...", options: ["4x²y", "4xy²", "4xy", "18x²y"], correctIndex: 0, timeLimit: 30 },
+            { id: "W-08", round: "wajib", category: "Pembagian Aljabar", question: "Sederhanakan: 24x³y² ÷ 6xy = ...", options: ["4xy²", "4x²y", "4xy", "18x²y"], correctIndex: 1, timeLimit: 30 },
             { id: "W-09", round: "wajib", category: "Substitusi Aljabar", question: "Jika x = 3 dan y = 2, nilai dari 3x + 2y adalah...", options: ["13", "12", "15", "10"], correctIndex: 0, timeLimit: 30 },
             { id: "W-10", round: "wajib", category: "Penjumlahan Aljabar", question: "Jumlah dari (2x² + 3x) dan (x² - 5x) adalah...", options: ["3x² - 2x", "3x² + 8x", "x² - 2x", "3x² - 8x"], correctIndex: 0, timeLimit: 30 },
 
             // BABAK REBUTAN
             { id: "R-01", round: "rebutan", category: "Perkalian Aljabar", question: "Jabarkan perkalian: (x + 3)(x + 2) = ...", options: ["x² + 5x + 6", "x² + 6x + 5", "x² + 5x + 5", "x² + 6"], correctIndex: 0, timeLimit: 15 },
-            { id: "R-02", round: "rebutan", category: "Pengurangan Aljabar", question: "Sederhanakan bentuk: (9p - 3) - (4p - 8) = ...", options: ["5p + 5", "5p - 11", "13p - 11", "5p - 5"], correctIndex: 0, timeLimit: 15 },
+            { id: "R-02", round: "rebutan", category: "Pengurangan Aljabar", question: "Sederhanakan bentuk: (9p - 3) - (4p - 8) = ...", options: ["5p - 5", "5p - 11", "13p - 11", "5p + 5"], correctIndex: 3, timeLimit: 15 },
             { id: "R-03", round: "rebutan", category: "Pembagian Aljabar", question: "Hasil pembagian dari (12x² + 6x) ÷ 3x adalah...", options: ["4x + 2", "4x + 2x", "4 + 2x", "2x + 4"], correctIndex: 0, timeLimit: 15 },
-            { id: "R-04", round: "rebutan", category: "Substitusi Aljabar", question: "Jika a = 3 dan b = 2, berapakah nilai dari 2a + 4b - 5? ...", options: ["9", "10", "11", "14"], correctIndex: 0, timeLimit: 15 },
+            { id: "R-04", round: "rebutan", category: "Substitusi Aljabar", question: "Jika a = 3 dan b = 2, berapakah nilai dari 2a + 4b - 3? ...", options: ["9", "10", "11", "14"], correctIndex: 2, timeLimit: 15 },
             { id: "R-05", round: "rebutan", category: "Perkalian Aljabar", question: "Jabarkan bentuk kuadrat aljabar: (2x - 3)² = ...", options: ["4x² - 12x + 9", "4x² - 9", "4x² - 6x + 9", "2x² - 12x + 9"], correctIndex: 0, timeLimit: 15 },
 
             // 20 SOAL CADANGAN
